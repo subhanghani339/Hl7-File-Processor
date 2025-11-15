@@ -33,7 +33,7 @@ public sealed class NhapiHl7MessageFactory : IHl7MessageFactory
         msh.EncodingCharacters.Value = "^~\\&";
         msh.SendingApplication.NamespaceID.Value = "HL7FileProcessor";
         msh.ReceivingApplication.NamespaceID.Value = "HL7Consumer";
-        msh.DateTimeOfMessage.TimeOfAnEvent.Value = DateTime.UtcNow.ToString("yyyyMMddHHmmss");
+        msh.DateTimeOfMessage.Time.Value = DateTime.UtcNow.ToString("yyyyMMddHHmmss");
         msh.MessageType.MessageCode.Value = "ADT";
         msh.MessageType.TriggerEvent.Value = "A01";
         msh.MessageType.MessageStructure.Value = "ADT_A01";
@@ -53,7 +53,7 @@ public sealed class NhapiHl7MessageFactory : IHl7MessageFactory
         patientName.FamilyName.Surname.Value = row.LastName;
         patientName.GivenName.Value = row.FirstName;
 
-        pid.DateTimeOfBirth.TimeOfAnEvent.Value = row.DateOfBirth.ToString("yyyyMMdd");
+        pid.DateTimeOfBirth.Time.Value = row.DateOfBirth.ToString("yyyyMMdd");
         pid.AdministrativeSex.Value = row.Gender;
     }
 
